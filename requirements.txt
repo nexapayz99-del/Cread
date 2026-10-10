@@ -1,0 +1,9 @@
+pyrogram==2.0.106
+TgCrypto==1.2.5
+telethon==1.36.0
+motor==3.5.1
+python-dotenv==1.0.1
+aiofiles==23.2.1
+Pillow==10.4.0
+python-telegram-bot==21.6
+aiohttp==3.10.5
