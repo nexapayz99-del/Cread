@@ -1,0 +1,11 @@
+{
+  "owner_id": int,
+  "name": str,
+  "phone": str,
+  "session": str,          # pyrogram/telethon session string
+  "type": "pyrogram"|"telethon"|"session_json"|"hex",
+  "active": bool,
+  "health": {"status": "ok"|"banned"|"flood", "checked_at": dt},
+  "joined_vcs": [chat_id, ...],
+  "created_at": dt
+}
