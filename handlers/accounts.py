@@ -97,3 +97,43 @@ async def remove_cmd(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         return
     ok = await remove_account(update.effective_user.id, ctx.args[0])
     await update.message.reply_text("🗑 Removed." if ok else "❌ Not found.")
+    
+    # ---------- Feature buttons ----------
+async def react_menu(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    q = update.callback_query
+    await q.answer()
+    await q.message.reply_text(
+        "❤️ <b>Auto Reaction</b>\n\n"
+        "Send: <code>/react &lt;channel_id&gt; &lt;msg_id&gt; [emoji]</code>\n"
+        "Example: <code>/react -1001234567890 45 🔥</code>",
+        parse_mode="HTML"
+    )
+
+async def views_menu(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    q = update.callback_query
+    await q.answer()
+    await q.message.reply_text(
+        "👁 <b>Auto Views</b>\n\n"
+        "Send: <code>/views &lt;channel_id&gt; &lt;msg_id&gt;</code>",
+        parse_mode="HTML"
+    )
+
+async def joinevc_menu(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    q = update.callback_query
+    await q.answer()
+    await q.message.reply_text(
+        "🎙 <b>VC Multi-Join</b>\n\n"
+        "Send: <code>/joinvc &lt;channel_id1&gt; &lt;channel_id2&gt; ...</code>\n"
+        "Bot will auto-join all channels with all your accounts.",
+        parse_mode="HTML"
+    )
+
+async def rand_menu(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    q = update.callback_query
+    await q.answer()
+    await q.message.reply_text(
+        "🎲 <b>Randomize Profile</b>\n\n"
+        "1. Send <code>/randomize</code>\n"
+        "2. Then upload a ZIP of DP images (optional).",
+        parse_mode="HTML"
+    )
