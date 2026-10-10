@@ -1,0 +1,9 @@
+{
+  "user_id": int,
+  "plan": "gold",
+  "reactions": int,
+  "views": int,
+  "vc_joins": int,
+  "accounts": int,
+  "expires_at": dt
+}
